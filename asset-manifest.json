@@ -1,0 +1,40 @@
+{
+  "files": {
+    "main.css": "/TOP-WeatherApp/static/css/main.1029af49.chunk.css",
+    "main.js": "/TOP-WeatherApp/static/js/main.198ff17e.chunk.js",
+    "main.js.map": "/TOP-WeatherApp/static/js/main.198ff17e.chunk.js.map",
+    "runtime-main.js": "/TOP-WeatherApp/static/js/runtime-main.63bca75e.js",
+    "runtime-main.js.map": "/TOP-WeatherApp/static/js/runtime-main.63bca75e.js.map",
+    "static/js/2.daa7aa22.chunk.js": "/TOP-WeatherApp/static/js/2.daa7aa22.chunk.js",
+    "static/js/2.daa7aa22.chunk.js.map": "/TOP-WeatherApp/static/js/2.daa7aa22.chunk.js.map",
+    "index.html": "/TOP-WeatherApp/index.html",
+    "precache-manifest.9963726c9d99bad0ee704729547ab001.js": "/TOP-WeatherApp/precache-manifest.9963726c9d99bad0ee704729547ab001.js",
+    "service-worker.js": "/TOP-WeatherApp/service-worker.js",
+    "static/css/main.1029af49.chunk.css.map": "/TOP-WeatherApp/static/css/main.1029af49.chunk.css.map",
+    "static/js/2.daa7aa22.chunk.js.LICENSE.txt": "/TOP-WeatherApp/static/js/2.daa7aa22.chunk.js.LICENSE.txt",
+    "static/media/icon_01d.png": "/TOP-WeatherApp/static/media/icon_01d.3eec3fdf.png",
+    "static/media/icon_01n.png": "/TOP-WeatherApp/static/media/icon_01n.bdd4f326.png",
+    "static/media/icon_02d.png": "/TOP-WeatherApp/static/media/icon_02d.54d93916.png",
+    "static/media/icon_02n.png": "/TOP-WeatherApp/static/media/icon_02n.2608e729.png",
+    "static/media/icon_03d.png": "/TOP-WeatherApp/static/media/icon_03d.3ff78779.png",
+    "static/media/icon_03n.png": "/TOP-WeatherApp/static/media/icon_03n.f9c5bca8.png",
+    "static/media/icon_04d.png": "/TOP-WeatherApp/static/media/icon_04d.3ff78779.png",
+    "static/media/icon_04n.png": "/TOP-WeatherApp/static/media/icon_04n.f9c5bca8.png",
+    "static/media/icon_09d.png": "/TOP-WeatherApp/static/media/icon_09d.aff873ca.png",
+    "static/media/icon_09n.png": "/TOP-WeatherApp/static/media/icon_09n.974a616a.png",
+    "static/media/icon_10d.png": "/TOP-WeatherApp/static/media/icon_10d.aff873ca.png",
+    "static/media/icon_10n.png": "/TOP-WeatherApp/static/media/icon_10n.974a616a.png",
+    "static/media/icon_11d.png": "/TOP-WeatherApp/static/media/icon_11d.75a1db2b.png",
+    "static/media/icon_11n.png": "/TOP-WeatherApp/static/media/icon_11n.e7eecdda.png",
+    "static/media/icon_13d.png": "/TOP-WeatherApp/static/media/icon_13d.03182491.png",
+    "static/media/icon_13n.png": "/TOP-WeatherApp/static/media/icon_13n.b9bd6540.png",
+    "static/media/icon_50d.png": "/TOP-WeatherApp/static/media/icon_50d.e854bb61.png",
+    "static/media/index.css": "/TOP-WeatherApp/static/media/widget_background.6352df72.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.63bca75e.js",
+    "static/js/2.daa7aa22.chunk.js",
+    "static/css/main.1029af49.chunk.css",
+    "static/js/main.198ff17e.chunk.js"
+  ]
+}
