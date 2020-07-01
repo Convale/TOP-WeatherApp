@@ -64,19 +64,17 @@ class WeatherApp extends React.Component {
 
     async getAPIData() {
         let result = [];
-        let isError = false;
         try {
             const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${searchCity}&appid=${apiCallOpenWeatherKey}&units=imperial`, { mode: 'cors' });
             result = await response.json();
         } catch (error) {
-            isError = true;
             this.setState({
             loadingError: error,
             isLoaded: true,
             })
         } finally {
-            if (result.cod == 200) {
-                if (workingLS == true) {
+            if (result.cod === 200) {
+                if (workingLS === true) {
                     localStorage.searchCity = JSON.stringify(searchCity);
                 }
                 this.setState({
@@ -150,6 +148,7 @@ Implementing a weather app using React (first React project)
     animation for city search
 
 Next Steps:
+    Scrub my API key
     Ability to change the temp unit (F/C)
     Time interval update
     ability to get geolocation from browser

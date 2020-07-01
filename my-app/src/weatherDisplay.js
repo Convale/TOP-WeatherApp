@@ -18,7 +18,7 @@ export default function WeatherDisplay(props) {
                {(props.loadingError != null) ? <div className="apiErrorCode">Error: {props.loadingError}</div> : null }
             </div>}
             <div className="weatherIcon">
-                <img src={weatherIconImport} />
+                <img src={weatherIconImport} alt="weather type icon"/>
                 <div className="weatherDescription">{props.weatherData.weather[0].main}</div>
             </div>
             <div className="tempuratureInfo">
