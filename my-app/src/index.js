@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import WeatherDisplay from './weatherDisplay';
-import './storage.js';
 
 var apiCallOpenWeatherKey = "8093a0fd1fbc1c30215fdca1950f2900";
 var cityInput = '';
