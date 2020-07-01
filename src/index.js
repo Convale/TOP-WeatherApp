@@ -149,6 +149,7 @@ Implementing a weather app using React (first React project)
 
 Next Steps:
     Scrub my API key
+    focus 
     Ability to change the temp unit (F/C)
     Time interval update
     ability to get geolocation from browser
