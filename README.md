@@ -1,68 +1,141 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<!-- PROJECT SHIELDS -->
 
-## Available Scripts
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
 
-In the project directory, you can run:
+<!-- PROJECT LOGO -->
+<br />
+<p align="center">
+    <img src="src/images/icon.png" alt="Logo" width="80" height="80">
+  
+  <h3 align="center">TOP - Weather App</h3>
 
-### `npm start`
+  <p align="center"> 
+   A seamless weather app! Get the latest weather from around the world.
+    <br />
+    <br />
+    <a href="https://convale.github.io/TOP-WeatherApp/">View Demo</a>
+    ·
+    <a href="https://github.com/Convale/TOP-WeatherApp/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/Convale/TOP-WeatherApp/issues">Request Feature</a>
+  </p>
+</p>
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<!-- TABLE OF CONTENTS -->
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Table of Contents
 
-### `npm test`
+- [About the Project](#about-the-project)
+  - [Built With](#built-with)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [Roadmap](#roadmap)
+- [Contributing](#contributing)
+- [License](#license)
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<!-- ABOUT THE PROJECT -->
 
-### `npm run build`
+## About The Project
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+[![Weather App Screen Shot][product-screenshot]](https://convale.github.io/TOP-WeatherApp/)
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+A modern weather app to keep up with the weather, wind, and humidity. It stores your last location in localStorage for ease to the user.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+To change the city, click on the current city name.
 
-### `npm run eject`
+This is part of The ODIN Project's Fullstack Javascript Bootcamp to teach budding web developers the basics.
+Want to learn to be a web developer? [Check out The ODIN Project](https://www.theodinproject.com/)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Built With
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- HTML / CSS / Javascript
+- [React](https://reactjs.org/)
+- localStorage
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+<!-- GETTING STARTED -->
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Getting Started
 
-## Learn More
+### Prerequisites
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- npm
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```sh
+npm install npm@latest -g
+```
 
-### Code Splitting
+### Installation
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+1.  Get a free API Key at [OpenWeather](https://openweathermap.org/)
+2.  Clone the repo
 
-### Analyzing the Bundle Size
+```sh
+git clone https://github.com/Convale/TOP-WeatherApp.git
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+3.  Install NPM packages
 
-### Making a Progressive Web App
+```sh
+npm install
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+4.  Follow `.env.sample` to deploy the API Key
 
-### Advanced Configuration
+```sh
+REACT_APP_WEATHER_API_KEY = <YOUR_API_KEY>
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+<!-- ROADMAP -->
 
-### Deployment
+## Roadmap
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+See the [open issues](https://github.com/Convale/TOP-WeatherApp/issues) for a list of proposed features (and known issues).
 
-### `npm run build` fails to minify
+Future Implementations:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- ability to change the tempurature unit (F/C)
+- Continuos update
+- ability to ask for geolocation from browser
+- animate the city search bar to open up / close down
+- add 5 day weather forecast
+- add air quality information (https://www.iqair.com/us/air-pollution-data-api)
+
+<!-- CONTRIBUTING -->
+
+## Contributing
+
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+<!-- LICENSE -->
+
+## License
+
+Distributed under the MIT License. See [`LICENSE`](https://github.com/Convale/TOP-WeatherApp/blob/master/LICENSE) for more information.
+
+<!-- MARKDOWN LINKS & IMAGES -->
+
+[contributors-shield]: https://img.shields.io/github/contributors/Convale/TOP-WeatherApp
+[contributors-url]: https://github.com/Convale/TOP-WeatherApp/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/Convale/TOP-WeatherApp
+[forks-url]: https://github.com/Convale/TOP-WeatherApp/network/members
+[stars-shield]: https://img.shields.io/github/stars/Convale/TOP-WeatherApp
+[stars-url]: https://github.com/Convale/TOP-WeatherApp/stargazers
+[issues-shield]: https://img.shields.io/github/issues/Convale/TOP-WeatherApp
+[issues-url]: https://github.com/Convale/TOP-WeatherApp/issues
+[license-shield]: https://img.shields.io/github/license/Convale/TOP-WeatherApp
+[license-url]: https://github.com/Convale/TOP-WeatherApp/blob/master/LICENSE.md
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
+[linkedin-url]: https://linkedin.com/in/payneshaun
+[product-screenshot]: src/images/screenshot.png

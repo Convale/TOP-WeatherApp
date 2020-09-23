@@ -1,118 +1,118 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import WeatherDisplay from './weatherDisplay';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import WeatherDisplay from "./weatherDisplay";
 
-var apiCallOpenWeatherKey = "8093a0fd1fbc1c30215fdca1950f2900";
-var cityInput = '';
+var cityInput = "";
 var searchCity = "San%20Francisco,CA,US";
 var workingLS = false;
 
-class WeatherApp extends React.Component {   
-    constructor(props) {
-        super(props);
-        this.state = {
-          weatherData: [],
-          loadingError: null,
-          fahrenheit: true,
-          isLoaded: false,
+class WeatherApp extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      weatherData: [],
+      loadingError: null,
+      fahrenheit: true,
+      isLoaded: false,
+      searchBox: false,
+    };
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleCityInput = this.handleCityInput.bind(this);
+    this.openSearchBox = this.openSearchBox.bind(this);
+    this.closeSearchBox = this.closeSearchBox.bind(this);
+  }
+
+  //check for stored city
+  async componentDidMount() {
+    try {
+      searchCity = JSON.parse(localStorage.searchCity);
+      workingLS = true;
+    } catch {
+      searchCity = "San%20Francisco,CA,US";
+    }
+    this.getAPIData();
+
+    const script = document.createElement("script");
+    script.src =
+      "https://cdn.jsdelivr.net/npm/algoliasearch@4/dist/algoliasearch.umd.js";
+    document.body.appendChild(script);
+  }
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+    searchCity = cityInput;
+    this.getAPIData();
+  };
+
+  handleCityInput = (event) => {
+    cityInput = event.target.value;
+  };
+
+  openSearchBox = () => {
+    this.setState({
+      searchBox: true,
+    });
+  };
+
+  closeSearchBox = () => {
+    this.setState({
+      searchBox: false,
+      loadingError: null,
+    });
+  };
+
+  async getAPIData() {
+    let result = [];
+    try {
+      const response = await fetch(
+        `https://api.openweathermap.org/data/2.5/weather?q=${searchCity}&appid=${process.env.REACT_APP_WEATHER_API_KEY}&units=imperial`,
+        { mode: "cors" }
+      );
+      result = await response.json();
+    } catch (error) {
+      this.setState({
+        loadingError: error,
+        isLoaded: true,
+      });
+    } finally {
+      if (result.cod === 200) {
+        if (workingLS === true) {
+          localStorage.searchCity = JSON.stringify(searchCity);
+        }
+        this.setState({
+          weatherData: result,
+          isLoaded: true,
           searchBox: false,
-        };
-        this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleCityInput = this.handleCityInput.bind(this);
-        this.openSearchBox = this.openSearchBox.bind(this);
-        this.closeSearchBox = this.closeSearchBox.bind(this);
-    }
-    
-    async componentDidMount() {
-        try {
-            searchCity = JSON.parse(localStorage.searchCity);
-            workingLS = true;
-        }
-        catch {
-            searchCity = "San%20Francisco,CA,US";
-        }
-        this.getAPIData();
-
-        const script = document.createElement("script");
-        script.src = "https://cdn.jsdelivr.net/npm/algoliasearch@4/dist/algoliasearch.umd.js";
-        document.body.appendChild(script);
-    }
-    
-    handleSubmit = (event) => {
-        event.preventDefault();
-        searchCity = cityInput;
-        this.getAPIData();
-    }
-
-    handleCityInput = (event) => {
-        cityInput = event.target.value;
-    }
-
-    openSearchBox = () => {
-        this.setState({
-            searchBox: true,
+          loadingError: null,
         });
-    }
-
-    closeSearchBox = () => {
+      } else {
         this.setState({
-            searchBox: false,
-            loadingError: null,
+          loadingError: result.message,
+          isLoaded: true,
         });
+      }
     }
+  }
 
-    async getAPIData() {
-        let result = [];
-        try {
-            const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${searchCity}&appid=${apiCallOpenWeatherKey}&units=imperial`, { mode: 'cors' });
-            result = await response.json();
-        } catch (error) {
-            this.setState({
-            loadingError: error,
-            isLoaded: true,
-            })
-        } finally {
-            if (result.cod === 200) {
-                if (workingLS === true) {
-                    localStorage.searchCity = JSON.stringify(searchCity);
-                }
-                this.setState({
-                    weatherData: result,
-                    isLoaded: true,
-                    searchBox: false,
-                    loadingError: null,
-                });
-            }
-            else {
-                this.setState({
-                    loadingError: result.message,
-                    isLoaded: true,
-                });
-            }
-        };
-    }
-
-    render() {
-        return (
-            ((this.state.isLoaded === true) ? 
-                <WeatherDisplay
-                    weatherData={this.state.weatherData}
-                    loadingError={this.state.loadingError}
-                    fahrenheit={this.state.fahrenheit}
-                    handleSubmit={this.handleSubmit}
-                    handleCityInput={this.handleCityInput}
-                    searchBox={this.state.searchBox}
-                    openSearchBox={this.openSearchBox}
-                    closeSearchBox={this.closeSearchBox}
-                /> : null)
-        )
-    }
+  render() {
+    return this.state.isLoaded === true ? (
+      <WeatherDisplay
+        weatherData={this.state.weatherData}
+        loadingError={this.state.loadingError}
+        fahrenheit={this.state.fahrenheit}
+        handleSubmit={this.handleSubmit}
+        handleCityInput={this.handleCityInput}
+        searchBox={this.state.searchBox}
+        openSearchBox={this.openSearchBox}
+        closeSearchBox={this.closeSearchBox}
+      />
+    ) : null;
+  }
 }
 
 //-- Initialize
-ReactDOM.render( <WeatherApp />, document.getElementById('root') );
-
+ReactDOM.render(<WeatherApp />, document.getElementById("root"));
 
 /*-- App agenda outline
 
@@ -139,7 +139,6 @@ Implementing a weather app using React (first React project)
 
 3) create call for weather from OpenWeather (done)
     https://openweathermap.org/current
-    key: 8093a0fd1fbc1c30215fdca1950f2900
     
 4) localStorage for location (done)
 
@@ -148,8 +147,6 @@ Implementing a weather app using React (first React project)
     animation for city search
 
 Next Steps:
-    Scrub my API key
-    focus 
     Ability to change the temp unit (F/C)
     Time interval update
     ability to get geolocation from browser
